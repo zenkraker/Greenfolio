@@ -1,0 +1,24 @@
+{
+  "name": "Green Crypto Tracker Dev",
+  // "dockerComposeFile": "docker-compose.yml",
+  // "service": "backend",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  // "workspaceFolder": "/workspace",
+  "appPort": [4200, 5000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "angular.ng-template"
+      ]
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
+    }
+  },
+  "postCreateCommand": "cd /backend && dotnet restore && cd /frontend && pnpm install",
+  "remoteUser": "root"
+}
