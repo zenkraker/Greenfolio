@@ -1,25 +1,36 @@
-n
 {
-  "name": "Green Crypto Tracker Dev",
-  // "dockerComposeFile": "docker-compose.yml",
-  // "service": "backend",
-  "dockerFile": "Dockerfile",
-  "context": "..",
-  // "workspaceFolder": "/workspace",
-  "appPort": [4200, 5000],
+  "name": "Greenfolio Full-Stack Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // "appPort": [4200, 5000],
+  "forwardPorts": [4200],
+  "workspaceFolder": "/workspaces/Greenfolio",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2.12.0": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "angular.ng-template",
         "esbenp.prettier-vscode",
+        "pflannery.vscode-versionlens",
+        "mongodb.mongodb-vscode",
         "ms-azuretools.vscode-docker",
-        "angular.ng-template"
+        "eamodio.gitlens",
+        "ms-vscode.vscode-typescript-next"
       ]
     },
     "settings": {
       "terminal.integrated.defaultProfile.linux": "bash"
     }
   },
-  "postCreateCommand": "cd /backend && dotnet restore && cd /frontend && pnpm install",
-  "remoteUser": "root"
+   "remoteUser": "vscode",
+  // "postCreateCommand": "sudo chown -R vscode:vscode /workspaces/Greenfolio && cd /backend && dotnet restore && cd /frontend && pnpm install -r"
+  "postCreateCommand": "cd /workspaces/Greenfolio/backend && dotnet restore && cd /workspaces/Greenfolio/frontend && pnpm install -r"
 }
