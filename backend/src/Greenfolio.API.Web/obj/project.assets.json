@@ -10490,18 +10490,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.Web\\Greenfolio.API.Web.csproj",
+      "projectUniqueName": "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.Web\\Greenfolio.API.Web.csproj",
       "projectName": "Greenfolio.API.Web",
-      "projectPath": "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.Web\\Greenfolio.API.Web.csproj",
+      "projectPath": "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.Web\\Greenfolio.API.Web.csproj",
       "packagesPath": "C:\\Users\\NicoloZanetti\\.nuget\\packages\\",
-      "outputPath": "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.Web\\obj\\",
+      "outputPath": "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.Web\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "Z:\\CodingProjects\\Greenfolio\\backend\\NuGet.Config",
+        "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\NuGet.Config",
         "C:\\Users\\NicoloZanetti\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -10517,11 +10517,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.Infrastructure\\Greenfolio.API.Infrastructure.csproj": {
-              "projectPath": "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.Infrastructure\\Greenfolio.API.Infrastructure.csproj"
+            "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.Infrastructure\\Greenfolio.API.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.Infrastructure\\Greenfolio.API.Infrastructure.csproj"
             },
-            "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.UseCases\\Greenfolio.API.UseCases.csproj": {
-              "projectPath": "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.UseCases\\Greenfolio.API.UseCases.csproj"
+            "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.UseCases\\Greenfolio.API.UseCases.csproj": {
+              "projectPath": "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.UseCases\\Greenfolio.API.UseCases.csproj"
             }
           }
         }

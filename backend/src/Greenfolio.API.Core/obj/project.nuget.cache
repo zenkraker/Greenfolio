@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GKQ+D6nKRTo=",
+  "dgSpecHash": "OVEvcxkc0Rw=",
   "success": true,
-  "projectFilePath": "Z:\\CodingProjects\\Greenfolio\\backend\\src\\Greenfolio.API.Core\\Greenfolio.API.Core.csproj",
+  "projectFilePath": "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\src\\Greenfolio.API.Core\\Greenfolio.API.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NicoloZanetti\\.nuget\\packages\\ardalis.guardclauses\\4.5.0\\ardalis.guardclauses.4.5.0.nupkg.sha512",
     "C:\\Users\\NicoloZanetti\\.nuget\\packages\\ardalis.result\\8.0.0\\ardalis.result.8.0.0.nupkg.sha512",

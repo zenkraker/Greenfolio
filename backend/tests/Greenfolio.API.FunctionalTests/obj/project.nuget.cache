@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9g8nSB5pCU0=",
+  "dgSpecHash": "6G7FNqTcS/M=",
   "success": true,
-  "projectFilePath": "Z:\\CodingProjects\\Greenfolio\\backend\\tests\\Greenfolio.API.FunctionalTests\\Greenfolio.API.FunctionalTests.csproj",
+  "projectFilePath": "C:\\Users\\NicoloZanetti\\source\\docker-compose-defs\\Greenfolio\\backend\\tests\\Greenfolio.API.FunctionalTests\\Greenfolio.API.FunctionalTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NicoloZanetti\\.nuget\\packages\\ardalis.guardclauses\\4.5.0\\ardalis.guardclauses.4.5.0.nupkg.sha512",
     "C:\\Users\\NicoloZanetti\\.nuget\\packages\\ardalis.httpclienttestextensions\\4.2.0\\ardalis.httpclienttestextensions.4.2.0.nupkg.sha512",
