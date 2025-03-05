@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Greenfolio.API.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73cc961c423a23a74dd749c6c8ad66bbc50b1024")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34acf6fd8a98cf81d89a7e51dc268f1495321fb5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Greenfolio.API.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Greenfolio.API.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
