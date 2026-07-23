@@ -6,6 +6,9 @@ spike/data/
 # gitlab-ci-local's local run cache/artifacts
 .gitlab-ci-local/
 
+# scripts/db-backup.sh output
+/backups/
+
 # Ignore .pnpm-store
 .pnpm-store*
 
