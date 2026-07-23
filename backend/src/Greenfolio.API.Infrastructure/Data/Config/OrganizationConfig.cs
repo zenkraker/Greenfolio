@@ -1,6 +1,7 @@
 using Greenfolio.API.Core.GreenGraph;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NpgsqlTypes;
 
 namespace Greenfolio.API.Infrastructure.Data.Config;
 
@@ -18,7 +19,7 @@ public class OrganizationConfiguration : IEntityTypeConfiguration<Organization>
     builder.Property(o => o.Lng).HasColumnName("lng");
     builder.Property(o => o.Website).HasColumnName("website");
     builder.Property(o => o.Status).HasColumnName("status").HasConversion<string>().HasMaxLength(20);
-    builder.Property<string>("SearchVector").HasColumnName("search_vector")
+    builder.Property<NpgsqlTsVector>("SearchVector").HasColumnName("search_vector")
       .HasColumnType("tsvector")
       .HasComputedColumnSql("to_tsvector('english', coalesce(name, ''))", stored: true);
     builder.HasIndex("SearchVector").HasMethod("GIN");
@@ -37,6 +38,7 @@ public class OrgSourceRecordConfiguration : IEntityTypeConfiguration<OrgSourceRe
     builder.Property(r => r.RawJson).HasColumnName("raw").HasColumnType("jsonb").IsRequired();
     builder.Property(r => r.ImportedAt).HasColumnName("imported_at");
     builder.HasIndex(r => new { r.SourceId, r.SourceNativeId });
+    builder.HasOne<Organization>().WithMany(o => o.SourceRecords).HasForeignKey(r => r.OrgId);
   }
 }
 

@@ -25,7 +25,8 @@ public class TopicConfiguration : IEntityTypeConfiguration<Topic>
     builder.Property(t => t.Key).HasColumnName("key").HasMaxLength(80).IsRequired();
     builder.Property(t => t.Name).HasColumnName("name").HasMaxLength(DataSchemaConstants.DEFAULT_NAME_LENGTH).IsRequired();
     builder.Property(t => t.TaxonomyVersion).HasColumnName("taxonomy_version");
-    builder.HasIndex(t => new { t.Key, t.TaxonomyVersion }).IsUnique();
+    // Scoped per field, not global: several fields intentionally reuse a "general" fallback topic key.
+    builder.HasIndex(t => new { t.FieldId, t.Key, t.TaxonomyVersion }).IsUnique();
     builder.HasOne<Field>().WithMany(f => f.Topics).HasForeignKey(t => t.FieldId);
   }
 }

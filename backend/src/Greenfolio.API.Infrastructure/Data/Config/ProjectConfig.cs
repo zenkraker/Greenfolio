@@ -1,6 +1,7 @@
 using Greenfolio.API.Core.GreenGraph;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NpgsqlTypes;
 
 namespace Greenfolio.API.Infrastructure.Data.Config;
 
@@ -19,7 +20,7 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
     builder.Property(p => p.Program).HasColumnName("program").HasMaxLength(100);
     builder.Property(p => p.OurSummary).HasColumnName("our_summary");
     builder.Property(p => p.SourceUrl).HasColumnName("source_url").IsRequired();
-    builder.Property<string>("SearchVector").HasColumnName("search_vector")
+    builder.Property<NpgsqlTsVector>("SearchVector").HasColumnName("search_vector")
       .HasColumnType("tsvector")
       .HasComputedColumnSql("to_tsvector('english', coalesce(title, ''))", stored: true);
     builder.HasIndex("SearchVector").HasMethod("GIN");
@@ -62,6 +63,7 @@ public class OrgTopicConfiguration : IEntityTypeConfiguration<OrgTopic>
     builder.Property(o => o.TopicId).HasColumnName("topic_id").IsRequired();
     builder.Property(o => o.Score).HasColumnName("score");
     builder.HasIndex(o => new { o.OrgId, o.TopicId }).IsUnique();
+    builder.HasOne<Organization>().WithMany(o => o.Topics).HasForeignKey(o => o.OrgId);
   }
 }
 
