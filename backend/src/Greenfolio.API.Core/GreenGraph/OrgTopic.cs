@@ -7,5 +7,7 @@ public class OrgTopic(int orgId, int topicId, double score) : EntityBase
 {
   public int OrgId { get; private set; } = orgId;
   public int TopicId { get; private set; } = topicId;
-  public double Score { get; set; } = score;
+  public double Score { get; private set; } = score;
+
+  public void UpdateScore(double score) => Score = score;
 }

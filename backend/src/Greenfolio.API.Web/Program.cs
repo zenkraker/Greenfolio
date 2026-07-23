@@ -7,8 +7,6 @@ using Greenfolio.API.Infrastructure;
 using Greenfolio.API.Infrastructure.Data;
 using Greenfolio.API.Infrastructure.Email;
 using Greenfolio.API.UseCases;
-using FastEndpoints;
-using FastEndpoints.Swagger;
 using Hangfire;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -35,11 +33,9 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
   options.MinimumSameSitePolicy = SameSiteMode.None;
 });
 
-builder.Services.AddFastEndpoints()
-                .SwaggerDocument(o =>
-                {
-                  o.ShortSchemaNames = true;
-                });
+// FastEndpoints returns in M2 with the first real domain endpoint (search, org profiles,
+// etc.) - reserved for domain routes per convention, not wired for pure infra routes like
+// /health, and it hard-fails at startup with zero endpoint declarations either way.
 
 ConfigureMediatR();
 
@@ -69,16 +65,14 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-  app.UseDefaultExceptionHandler(); // from FastEndpoints
+  app.UseExceptionHandler("/error");
   app.UseHsts();
 }
-
-app.UseFastEndpoints()
-    .UseSwaggerGen(); // Includes AddFileServer and static files middleware
 
 app.UseHttpsRedirection();
 
 app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+app.MapGet("/error", () => Results.Problem());
 
 if (app.Environment.IsDevelopment())
 {
