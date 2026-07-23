@@ -3,6 +3,9 @@ node_modules
 # Week 1 data spike — cached bulk downloads, not source
 spike/data/
 
+# gitlab-ci-local's local run cache/artifacts
+.gitlab-ci-local/
+
 # Ignore .pnpm-store
 .pnpm-store*
 
