@@ -1,5 +1,8 @@
 node_modules
 
+# Week 1 data spike — cached bulk downloads, not source
+spike/data/
+
 # Ignore .pnpm-store
 .pnpm-store*
 

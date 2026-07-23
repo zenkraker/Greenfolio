@@ -1,0 +1,600 @@
+{
+  "GeneratedAt": "2026-07-23T07:57:08.1674104Z",
+  "Totals": {
+    "ProjectsTotal": 58667,
+    "ProjectsGreen": 8335,
+    "OrgRowsTotal": 323112,
+    "OrgsDistinctTotal": 62196,
+    "OrgsDistinctGreen": 23624
+  },
+  "FieldStats": [
+    {
+      "Field": "Environmental Pollution \u0026 Governance",
+      "ProjectCount": 2434,
+      "OrgCount": 10909
+    },
+    {
+      "Field": "Climate \u0026 Carbon Management",
+      "ProjectCount": 2796,
+      "OrgCount": 10540
+    },
+    {
+      "Field": "Circular Economy \u0026 Recycling",
+      "ProjectCount": 1322,
+      "OrgCount": 5646
+    },
+    {
+      "Field": "Water Management",
+      "ProjectCount": 684,
+      "OrgCount": 3023
+    },
+    {
+      "Field": "Sustainable Buildings \u0026 Agriculture",
+      "ProjectCount": 444,
+      "OrgCount": 2876
+    },
+    {
+      "Field": "Solar",
+      "ProjectCount": 682,
+      "OrgCount": 2088
+    },
+    {
+      "Field": "Wind \u0026 Marine Energy",
+      "ProjectCount": 528,
+      "OrgCount": 2053
+    },
+    {
+      "Field": "Sustainable Mobility",
+      "ProjectCount": 343,
+      "OrgCount": 2013
+    },
+    {
+      "Field": "Energy Storage \u0026 Batteries",
+      "ProjectCount": 489,
+      "OrgCount": 1967
+    },
+    {
+      "Field": "Bioenergy \u0026 Alternative Fuels",
+      "ProjectCount": 372,
+      "OrgCount": 1682
+    },
+    {
+      "Field": "Hydrogen",
+      "ProjectCount": 185,
+      "OrgCount": 1035
+    },
+    {
+      "Field": "Geothermal",
+      "ProjectCount": 80,
+      "OrgCount": 525
+    },
+    {
+      "Field": "Critical Materials (rare earths)",
+      "ProjectCount": 3,
+      "OrgCount": 47
+    }
+  ],
+  "WedgeCountryStats": [
+    {
+      "Country": "DE",
+      "OrgCount": 331,
+      "ProjectCount": 291,
+      "Universities": 40,
+      "ResearchOrgs": 27,
+      "Companies": 246
+    },
+    {
+      "Country": "FR",
+      "OrgCount": 296,
+      "ProjectCount": 228,
+      "Universities": 35,
+      "ResearchOrgs": 17,
+      "Companies": 224
+    },
+    {
+      "Country": "IT",
+      "OrgCount": 248,
+      "ProjectCount": 220,
+      "Universities": 33,
+      "ResearchOrgs": 22,
+      "Companies": 185
+    },
+    {
+      "Country": "ES",
+      "OrgCount": 243,
+      "ProjectCount": 219,
+      "Universities": 26,
+      "ResearchOrgs": 45,
+      "Companies": 150
+    },
+    {
+      "Country": "UK",
+      "OrgCount": 215,
+      "ProjectCount": 199,
+      "Universities": 53,
+      "ResearchOrgs": 5,
+      "Companies": 134
+    },
+    {
+      "Country": "NL",
+      "OrgCount": 152,
+      "ProjectCount": 141,
+      "Universities": 9,
+      "ResearchOrgs": 9,
+      "Companies": 126
+    },
+    {
+      "Country": "BE",
+      "OrgCount": 120,
+      "ProjectCount": 126,
+      "Universities": 7,
+      "ResearchOrgs": 14,
+      "Companies": 76
+    },
+    {
+      "Country": "SE",
+      "OrgCount": 96,
+      "ProjectCount": 85,
+      "Universities": 10,
+      "ResearchOrgs": 7,
+      "Companies": 66
+    },
+    {
+      "Country": "AT",
+      "OrgCount": 81,
+      "ProjectCount": 85,
+      "Universities": 6,
+      "ResearchOrgs": 11,
+      "Companies": 59
+    },
+    {
+      "Country": "NO",
+      "OrgCount": 74,
+      "ProjectCount": 81,
+      "Universities": 5,
+      "ResearchOrgs": 7,
+      "Companies": 53
+    },
+    {
+      "Country": "EL",
+      "OrgCount": 67,
+      "ProjectCount": 64,
+      "Universities": 8,
+      "ResearchOrgs": 7,
+      "Companies": 43
+    },
+    {
+      "Country": "FI",
+      "OrgCount": 57,
+      "ProjectCount": 63,
+      "Universities": 8,
+      "ResearchOrgs": 3,
+      "Companies": 42
+    },
+    {
+      "Country": "PT",
+      "OrgCount": 49,
+      "ProjectCount": 46,
+      "Universities": 8,
+      "ResearchOrgs": 11,
+      "Companies": 27
+    },
+    {
+      "Country": "CH",
+      "OrgCount": 47,
+      "ProjectCount": 81,
+      "Universities": 8,
+      "ResearchOrgs": 2,
+      "Companies": 31
+    },
+    {
+      "Country": "DK",
+      "OrgCount": 45,
+      "ProjectCount": 90,
+      "Universities": 4,
+      "ResearchOrgs": 2,
+      "Companies": 29
+    },
+    {
+      "Country": "TR",
+      "OrgCount": 39,
+      "ProjectCount": 23,
+      "Universities": 9,
+      "ResearchOrgs": 3,
+      "Companies": 26
+    },
+    {
+      "Country": "PL",
+      "OrgCount": 34,
+      "ProjectCount": 37,
+      "Universities": 6,
+      "ResearchOrgs": 5,
+      "Companies": 17
+    },
+    {
+      "Country": "CZ",
+      "OrgCount": 32,
+      "ProjectCount": 39,
+      "Universities": 10,
+      "ResearchOrgs": 3,
+      "Companies": 18
+    },
+    {
+      "Country": "SI",
+      "OrgCount": 24,
+      "ProjectCount": 32,
+      "Universities": 2,
+      "ResearchOrgs": 3,
+      "Companies": 15
+    },
+    {
+      "Country": "EE",
+      "OrgCount": 20,
+      "ProjectCount": 22,
+      "Universities": 2,
+      "ResearchOrgs": 0,
+      "Companies": 13
+    },
+    {
+      "Country": "HR",
+      "OrgCount": 19,
+      "ProjectCount": 11,
+      "Universities": 6,
+      "ResearchOrgs": 0,
+      "Companies": 9
+    },
+    {
+      "Country": "CN",
+      "OrgCount": 19,
+      "ProjectCount": 8,
+      "Universities": 14,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "IE",
+      "OrgCount": 18,
+      "ProjectCount": 21,
+      "Universities": 6,
+      "ResearchOrgs": 1,
+      "Companies": 9
+    },
+    {
+      "Country": "CY",
+      "OrgCount": 15,
+      "ProjectCount": 14,
+      "Universities": 2,
+      "ResearchOrgs": 0,
+      "Companies": 11
+    },
+    {
+      "Country": "IL",
+      "OrgCount": 15,
+      "ProjectCount": 23,
+      "Universities": 4,
+      "ResearchOrgs": 0,
+      "Companies": 9
+    },
+    {
+      "Country": "RO",
+      "OrgCount": 14,
+      "ProjectCount": 13,
+      "Universities": 5,
+      "ResearchOrgs": 4,
+      "Companies": 4
+    },
+    {
+      "Country": "LV",
+      "OrgCount": 12,
+      "ProjectCount": 10,
+      "Universities": 1,
+      "ResearchOrgs": 1,
+      "Companies": 4
+    },
+    {
+      "Country": "US",
+      "OrgCount": 11,
+      "ProjectCount": 13,
+      "Universities": 7,
+      "ResearchOrgs": 0,
+      "Companies": 4
+    },
+    {
+      "Country": "HU",
+      "OrgCount": 11,
+      "ProjectCount": 10,
+      "Universities": 3,
+      "ResearchOrgs": 2,
+      "Companies": 4
+    },
+    {
+      "Country": "UA",
+      "OrgCount": 10,
+      "ProjectCount": 7,
+      "Universities": 2,
+      "ResearchOrgs": 2,
+      "Companies": 6
+    },
+    {
+      "Country": "LU",
+      "OrgCount": 10,
+      "ProjectCount": 14,
+      "Universities": 1,
+      "ResearchOrgs": 1,
+      "Companies": 7
+    },
+    {
+      "Country": "ZA",
+      "OrgCount": 10,
+      "ProjectCount": 5,
+      "Universities": 2,
+      "ResearchOrgs": 2,
+      "Companies": 5
+    },
+    {
+      "Country": "AU",
+      "OrgCount": 9,
+      "ProjectCount": 10,
+      "Universities": 6,
+      "ResearchOrgs": 1,
+      "Companies": 1
+    },
+    {
+      "Country": "LT",
+      "OrgCount": 9,
+      "ProjectCount": 7,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 6
+    },
+    {
+      "Country": "BG",
+      "OrgCount": 7,
+      "ProjectCount": 10,
+      "Universities": 2,
+      "ResearchOrgs": 1,
+      "Companies": 2
+    },
+    {
+      "Country": "SK",
+      "OrgCount": 7,
+      "ProjectCount": 8,
+      "Universities": 0,
+      "ResearchOrgs": 3,
+      "Companies": 4
+    },
+    {
+      "Country": "CA",
+      "OrgCount": 7,
+      "ProjectCount": 6,
+      "Universities": 5,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "IS",
+      "OrgCount": 7,
+      "ProjectCount": 7,
+      "Universities": 0,
+      "ResearchOrgs": 0,
+      "Companies": 6
+    },
+    {
+      "Country": "IN",
+      "OrgCount": 6,
+      "ProjectCount": 2,
+      "Universities": 3,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "JP",
+      "OrgCount": 4,
+      "ProjectCount": 4,
+      "Universities": 3,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "RS",
+      "OrgCount": 3,
+      "ProjectCount": 3,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 2
+    },
+    {
+      "Country": "MY",
+      "OrgCount": 3,
+      "ProjectCount": 4,
+      "Universities": 3,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "KR",
+      "OrgCount": 3,
+      "ProjectCount": 2,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "CL",
+      "OrgCount": 2,
+      "ProjectCount": 2,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "MT",
+      "OrgCount": 2,
+      "ProjectCount": 2,
+      "Universities": 0,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "TN",
+      "OrgCount": 2,
+      "ProjectCount": 2,
+      "Universities": 2,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "EG",
+      "OrgCount": 2,
+      "ProjectCount": 2,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "MA",
+      "OrgCount": 2,
+      "ProjectCount": 2,
+      "Universities": 1,
+      "ResearchOrgs": 1,
+      "Companies": 0
+    },
+    {
+      "Country": "TH",
+      "OrgCount": 2,
+      "ProjectCount": 2,
+      "Universities": 2,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "SG",
+      "OrgCount": 2,
+      "ProjectCount": 2,
+      "Universities": 2,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "NG",
+      "OrgCount": 2,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "KZ",
+      "OrgCount": 2,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "RU",
+      "OrgCount": 2,
+      "ProjectCount": 3,
+      "Universities": 0,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "PK",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "GH",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "BW",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "CO",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "NZ",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "LK",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "ID",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 1,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "MH",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 0,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    },
+    {
+      "Country": "TW",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 0,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "BR",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 0,
+      "ResearchOrgs": 0,
+      "Companies": 0
+    },
+    {
+      "Country": "PA",
+      "OrgCount": 1,
+      "ProjectCount": 1,
+      "Universities": 0,
+      "ResearchOrgs": 0,
+      "Companies": 1
+    }
+  ],
+  "Dedup": {
+    "DistinctOrgIds": 62196,
+    "DistinctNameCountryGroups": 62028,
+    "FragmentedGroups": 164,
+    "RorSampleSize": 100,
+    "RorHighConfidence": 22,
+    "RorNeedsReview": 28,
+    "RorLowConfidence": 50
+  }
+}
