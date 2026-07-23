@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Ardalis.SharedKernel;
-using Greenfolio.API.Core.ContributorAggregate;
+using Greenfolio.API.Core.GreenGraph;
 using Microsoft.EntityFrameworkCore;
 
 namespace Greenfolio.API.Infrastructure.Data;
@@ -15,7 +15,27 @@ public class AppDbContext : DbContext
     _dispatcher = dispatcher;
   }
 
-  public DbSet<Contributor> Contributors => Set<Contributor>();
+  public DbSet<Source> Sources => Set<Source>();
+  public DbSet<Organization> Organizations => Set<Organization>();
+  public DbSet<OrgSourceRecord> OrgSourceRecords => Set<OrgSourceRecord>();
+  public DbSet<OrgMerge> OrgMerges => Set<OrgMerge>();
+  public DbSet<Person> Persons => Set<Person>();
+  public DbSet<Field> Fields => Set<Field>();
+  public DbSet<Topic> Topics => Set<Topic>();
+  public DbSet<EuroSciVocCrosswalk> EuroSciVocCrosswalks => Set<EuroSciVocCrosswalk>();
+  public DbSet<Project> Projects => Set<Project>();
+  public DbSet<ProjectParticipant> ProjectParticipants => Set<ProjectParticipant>();
+  public DbSet<ProjectTopic> ProjectTopics => Set<ProjectTopic>();
+  public DbSet<OrgTopic> OrgTopics => Set<OrgTopic>();
+  public DbSet<CollabEdge> CollabEdges => Set<CollabEdge>();
+  public DbSet<Publication> Publications => Set<Publication>();
+  public DbSet<PublicationAuthor> PublicationAuthors => Set<PublicationAuthor>();
+  public DbSet<Claim> Claims => Set<Claim>();
+  public DbSet<User> Users => Set<User>();
+  public DbSet<CollabRequest> CollabRequests => Set<CollabRequest>();
+  public DbSet<ScoutingLead> ScoutingLeads => Set<ScoutingLead>();
+  public DbSet<Event> Events => Set<Event>();
+  public DbSet<SuppressionList> SuppressionList => Set<SuppressionList>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

@@ -1,15 +1,17 @@
 ﻿using System.Reflection;
 using Ardalis.ListStartupServices;
 using Ardalis.SharedKernel;
-using Greenfolio.API.Core.ContributorAggregate;
+using Greenfolio.API.Core.GreenGraph;
 using Greenfolio.API.Core.Interfaces;
 using Greenfolio.API.Infrastructure;
 using Greenfolio.API.Infrastructure.Data;
 using Greenfolio.API.Infrastructure.Email;
-using Greenfolio.API.UseCases.Contributors.Create;
+using Greenfolio.API.UseCases;
 using FastEndpoints;
 using FastEndpoints.Swagger;
+using Hangfire;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Extensions.Logging;
 
@@ -76,11 +78,18 @@ app.UseFastEndpoints()
 
 app.UseHttpsRedirection();
 
-SeedDatabase(app);
+app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+
+if (app.Environment.IsDevelopment())
+{
+  app.UseHangfireDashboard("/hangfire");
+}
+
+MigrateAndSeedDatabase(app);
 
 app.Run();
 
-static void SeedDatabase(WebApplication app)
+static void MigrateAndSeedDatabase(WebApplication app)
 {
   using var scope = app.Services.CreateScope();
   var services = scope.ServiceProvider;
@@ -88,14 +97,13 @@ static void SeedDatabase(WebApplication app)
   try
   {
     var context = services.GetRequiredService<AppDbContext>();
-    //          context.Database.Migrate();
-    context.Database.EnsureCreated();
+    context.Database.Migrate();
     SeedData.Initialize(services);
   }
   catch (Exception ex)
   {
     var logger = services.GetRequiredService<ILogger<Program>>();
-    logger.LogError(ex, "An error occurred seeding the DB. {exceptionMessage}", ex.Message);
+    logger.LogError(ex, "An error occurred migrating/seeding the DB. {exceptionMessage}", ex.Message);
   }
 }
 
@@ -103,8 +111,8 @@ void ConfigureMediatR()
 {
   var mediatRAssemblies = new[]
 {
-  Assembly.GetAssembly(typeof(Contributor)), // Core
-  Assembly.GetAssembly(typeof(CreateContributorCommand)) // UseCases
+  Assembly.GetAssembly(typeof(Organization)), // Core
+  Assembly.GetAssembly(typeof(UseCasesAssemblyMarker)) // UseCases
 };
   builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(mediatRAssemblies!));
   builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
