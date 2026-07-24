@@ -1,0 +1,70 @@
+stages:
+  - build
+  - test
+  - publish
+
+variables:
+  DOTNET_NOLOGO: "1"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+
+.dotnet-image:
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+
+build:
+  extends: .dotnet-image
+  stage: build
+  script:
+    - cd backend
+    - dotnet restore Greenfolio.API.sln
+    - dotnet build Greenfolio.API.sln --no-restore -c Release
+  artifacts:
+    paths:
+      - backend/src/*/bin/Release/
+      - backend/tests/*/bin/Release/
+    expire_in: 1 hour
+
+unit-test:
+  extends: .dotnet-image
+  stage: test
+  needs: ["build"]
+  script:
+    - cd backend
+    - dotnet test tests/Greenfolio.API.UnitTests/Greenfolio.API.UnitTests.csproj -c Release --no-build --logger "console;verbosity=normal"
+
+# Needs Docker (Testcontainers spins up a real, ephemeral Postgres 16 per run) - requires a
+# GitLab Runner configured with a Docker executor exposing /var/run/docker.sock, or
+# docker-in-docker. Not run via gitlab-ci-local's default image-based executor.
+integration-test:
+  extends: .dotnet-image
+  stage: test
+  needs: ["build"]
+  script:
+    - cd backend
+    - dotnet test tests/Greenfolio.API.IntegrationTests/Greenfolio.API.IntegrationTests.csproj -c Release --no-build --logger "console;verbosity=normal"
+    - dotnet test tests/Greenfolio.API.FunctionalTests/Greenfolio.API.FunctionalTests.csproj -c Release --no-build --logger "console;verbosity=normal"
+
+publish-image:
+  stage: publish
+  needs: ["unit-test"]
+  image: docker:27
+  services:
+    - docker:27-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  script:
+    - docker build -t greenfolio-api:$CI_COMMIT_SHORT_SHA -f backend/Dockerfile backend
+    - docker tag greenfolio-api:$CI_COMMIT_SHORT_SHA greenfolio-api:latest
+    # Push is gated on CI_REGISTRY being configured (a real registry target) - this job
+    # always builds and tags the image locally as proof the artifact is producible; it only
+    # pushes when running against a real GitLab instance with a registry attached, not under
+    # gitlab-ci-local.
+    - |
+      if [ -n "$CI_REGISTRY" ]; then
+        echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+        docker tag greenfolio-api:$CI_COMMIT_SHORT_SHA "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+        docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+      else
+        echo "No CI_REGISTRY configured - built and tagged locally only."
+      fi
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"

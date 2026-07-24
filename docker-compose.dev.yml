@@ -1,0 +1,59 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    working_dir: /workspaces/Greenfolio
+    volumes:
+      - .:/workspaces/Greenfolio
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=greenfolio;Username=devuser;Password=devpassword
+    depends_on:
+      postgres:
+        condition: service_healthy
+    # devcontainer.json overrides this (per the devcontainer spec default) to keep the
+    # container idle for interactive attach. Plain `docker compose up` runs the app for real.
+    command: >
+      bash -c "cd backend && dotnet restore && dotnet run
+      --project src/Greenfolio.API.Web/Greenfolio.API.Web.csproj
+      --urls http://0.0.0.0:8080 --no-launch-profile"
+
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpassword
+      POSTGRES_DB: greenfolio
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./.devcontainer/db-init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U devuser -d greenfolio"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Self-hosted analytics (brief §3.2.6 cookieless requirement). Chosen over Plausible for
+  # the dev stack: Umami needs only Postgres, where Plausible also wants its own ClickHouse.
+  umami:
+    image: ghcr.io/umami-software/umami:postgresql-latest
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://devuser:devpassword@postgres:5432/umami
+      DATABASE_TYPE: postgresql
+      APP_SECRET: dev-only-secret-do-not-use-in-production
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
